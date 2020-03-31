@@ -150,5 +150,3 @@ function generateCard(employee) {
     }
     dynamicContent+=cardHtml;
 }
-
-
