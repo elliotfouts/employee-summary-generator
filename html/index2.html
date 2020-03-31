@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            background: rgb(233, 233, 233);
+            color: rgb(58, 58, 58);
+        }
+        #title {
+            text-align: left;
+            font-size: 3rem;
+            padding: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        #employee-card-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 2rem;
+            padding: 2rem;
+        }
+        .employee-card {
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        }
+        .employee-card-title {
+            padding: 2rem;
+            font-weight: 100;
+            background: rgb(179, 179, 179);
+        }
+        .employee-card-name{
+            font-weight: 800;
+        }
+        .employee-card-info {
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Meet The Team</h1>
+    <div id="employee-card-container">
+        <div class="employee-card"> 
+        <h1 class="employee-card-title"><span class="employee-card-name">ee</span> / manager </h1>
+        <div class="employee-card-info">
+            <p>ID: ee</p>
+            <p>Email: ee</p><p>Office Number: 344</p></div></div><div class="employee-card"> 
+        <h1 class="employee-card-title"><span class="employee-card-name">tt</span> / manager </h1>
+        <div class="employee-card-info">
+            <p>ID: tt</p>
+            <p>Email: tt</p><p>Office Number: undefined</p></div></div>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
