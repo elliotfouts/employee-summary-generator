@@ -1,6 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-let employee = require("./library/classes")
+let employee = require("./lib/employee");
+let manager = require("./lib/manager");
+let engineer = require("./lib/engineer");
+let intern = require("./lib/intern");
 let isAddingEmployees = true;
 let currentEmployee;
 let dynamicContent = "";
@@ -112,11 +115,11 @@ function getInput() {
     promptUser(prompt).then(answers=>{
         // instantiates objects based on job title
         if (answers.title == "manager") {
-            currentEmployee = new employee.Manager(answers.name, answers.id, answers.email, answers.title, answers.officeNumber);
+            currentEmployee = new manager(answers.name, answers.id, answers.email, answers.title, answers.officeNumber);
         } else if (answers.title == "engineer") {
-            currentEmployee = new employee.Engineer(answers.name, answers.id, answers.email, answers.title, answers.github);
+            currentEmployee = new engineer(answers.name, answers.id, answers.email, answers.title, answers.github);
         } else if (answers.title == "intern") {
-            currentEmployee = new employee.Intern(answers.name, answers.id, answers.email, answers.title, answers.school);
+            currentEmployee = new intern(answers.name, answers.id, answers.email, answers.title, answers.school);
         }
         // generates html for employee info
         generateCard(currentEmployee);
@@ -141,11 +144,11 @@ function generateCard(employee) {
         <div class="employee-card-info">
             <p>ID: ${employee.id}</p>
             <p>Email: ${employee.email}</p>`
-    if (employee.title == "manager") {
+    if (employee.title == "Manager") {
         cardHtml+=`<p>Office Number: ${employee.officeNumber}</p></div></div>`;
-    } else if (employee.title == "engineer") {
+    } else if (employee.title == "Engineer") {
         cardHtml+=`<p>Github: ${employee.github}</p></div></div>`;
-    } else if (employee.title == "intern") {
+    } else if (employee.title == "Intern") {
         cardHtml+=`<p>School: ${employee.school}</p></div></div>`;
     }
     dynamicContent+=cardHtml;
